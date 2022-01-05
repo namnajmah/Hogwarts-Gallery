@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/css/swiper.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" />
+    <link rel="icon" href="icon.png">
+    <title>Hogwarts Gallery</title>
+  </head>
+  <body>
+    <section class="swiper-container loading">
+      <div class="swiper-wrapper">
+        
+        <div class="swiper-slide slide1">
+          <div class="content">
+            <p class="title" data-swiper-parallax="-30%" data-swiper-parallax-scale=".7">Hogwarts</p>
+            <span class="caption" data-swiper-parallax="-20%">Each House has its own noble history and each has produced outstanding witches and wizards.</span>
+          </div>
+        </div>
+
+        <div class="swiper-slide slide2">
+          <div class="content">
+            <p class="title" data-swiper-parallax="-30%" data-swiper-parallax-scale=".7">Gryffindor</p>
+            <span class="caption" data-swiper-parallax="-20%">Gryffindor valued bravery, daring, nerve, and chivalry. Its emblematic animal was the lion, and its colours were scarlet and gold.</span>
+          </div>
+        </div>
+
+        <div class="swiper-slide slide3">
+         
+          <div class="content">
+            <p class="title" data-swiper-parallax="-30%" data-swiper-parallax-scale=".7">Ravenclaw</p>
+            <span class="caption" data-swiper-parallax="-20%">Ravenclaw valued intelligence, knowledge, curiosity, creativity and wit. Its emblematic animal was the eagle, and its colours were blue and bronze.</span>
+          </div>
+        </div>
+      
+        <div class="swiper-slide slide4">
+          <div class="content">
+            <p class="title" data-swiper-parallax="-30%" data-swiper-parallax-scale=".7">Slytherin</p>
+            <span class="caption" data-swiper-parallax="-20%">Slytherin valued ambition, leadership, self-preservation, cunning and resourcefulness. Its emblematic animal was the serpent, and its colours were emerald green and silver.</span>
+          </div>
+        </div>
+
+        <div class="swiper-slide slide5">
+          <div class="content">
+            <p class="title" data-swiper-parallax="-30%" data-swiper-parallax-scale=".7">Hufflepuff</p>
+            <span class="caption" data-swiper-parallax="-20%">Hufflepuff valued hard work, dedication, patience, loyalty, and fair play. Its emblematic animal was the badger,and yellow and black were its colours.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div id=container>
+      <div id=flip>
+        <div><div>Lived</div></div>
+        <div><div>Who</div></div>
+        <div><div>Boy</div></div>
+      </div>
+    </div>
+    <div class="fly">    
+      <img src="fly.png">
+    </div>
+    <p class="here">Ever wondered which house you belong to? Sort your mudblood self <a href="https://my.wizardingworld.com/sorting-hat">here</a>.</p>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.1/js/swiper.min.js"></script>
+  <script>
+    let sliderSelector = '.swiper-container',
+        options = {
+          loop: true,
+          speed:800,
+          slidesPerView: 2,
+          spaceBetween: 20,
+          centeredSlides : true,
+          effect: 'coverflow',
+          coverflowEffect: {
+            rotate: 50,
+            stretch: 0,
+            depth: 50,
+            modifier: 1,
+            slideShadows : true
+          },
+          grabCursor: true,
+          parallax: true,
+          on: {
+            imagesReady: function(){
+              this.el.classList.remove('loading');
+            }
+          }
+        };
+    let mySwiper = new Swiper(sliderSelector, options);
+    mySwiper.init();
+  </script>
+  </body>
+</html>
